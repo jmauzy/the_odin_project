@@ -1,0 +1,51 @@
+<h1> New User Test Form </h1>
+
+<!-- 
+<form action="/users" method="post" accept-charset="UTF-8">
+	<input type="hidden" name="authenticity_token" value="<% form_authenticity_token %>">
+	Username: <input id="username" type="text" placeholder="johnsmith123" name="user[username]"><br>
+	Email: <input id="email" type="text" placeholder="johnsmith@example.com" name="user[email]"><br>
+	Password: <input id="password" type="password" name="user[password]"><br>
+	Confirm Password <input id="confirm_password" type="password" name="user[confirm_password]">
+	<input type="submit" value="Submit">
+</form> 
+-->
+
+<!--
+<%= form_tag("/users", method: "post") do %>
+	<%= label_tag(:username, "Username:") %>
+	<%= text_field_tag(:username) %><br>
+	
+	<%= label_tag(:email, "email:") %>
+	<%= text_field_tag(:email) %><br>
+	
+	<%= label_tag(:password, "password:") %>
+	<%= password_field_tag(:password) %><br>
+	
+	<%= label_tag(:confirm_password, "Re-enter password:") %>
+	<%= password_field_tag(:confirm_password) %><br>
+	
+	<%= submit_tag("Submit") %>
+<% end %>
+-->
+
+<%= form_for @user do |f| %>
+<p>
+	<%= f.label :username %> <br/>
+	<%= f.text_field :username %>
+</p>
+<p>
+	<%= f.label :email %> <br/>
+	<%= f.text_field :email %>
+</p>
+<p>
+	<%= f.label :password %> <br/>
+	<%= f.password_field :password %>
+</p>
+<p>
+	<%= f.label :confirm_password %> <br/>
+	<%= f.password_field :confirm_password %>
+</p>
+<p><%= f.submit %></p>
+<% end %>
+	
