@@ -1,0 +1,14 @@
+    <header class="navbar navbar-fixed-top navbar-inverse fl">
+      <div class="container">
+        <%= link_to "members only", root_path, class: "navbar-brand" %>
+			<ul class="nav navbar-nav navbar-right">
+			<% if signed_in? %>
+				<li><%= link_to current_user.name, '#' %></li>
+				<li><%= link_to "Sign Out", logout_path %></li>
+			<% else %>
+				<li><%=link_to "Register", register_path %></li>
+				<li><%=link_to "Sign In", signin_path %></li>
+			<% end %>
+        </nav>
+      </div>
+    </header><br><br><br>
