@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from_airport_id: MyString
+  to_airport_id: MyString
+  datetime: 2015-06-21 21:42:09
+
+two:
+  from_airport_id: MyString
+  to_airport_id: MyString
+  datetime: 2015-06-21 21:42:09

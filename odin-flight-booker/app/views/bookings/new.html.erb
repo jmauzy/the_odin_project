@@ -1,0 +1,23 @@
+<h1>Confirm Booking</h1>
+
+<p>Creating booking for <%= pluralize(@num_passengers, "passenger") %>:</p>
+<p>Flight number <%= @flight.id %></p>
+<p>Departing <%= @flight.datetime %></p>
+<p>From <%= @flight.origin.code %> to <%= @flight.destination.code %>
+
+<h2>Please enter passenger information:</h2>
+
+<%= form_for @booking do |f| %>
+	<%= f.hidden_field :flight_id, :value => @flight.id %>
+		
+		<%= f.fields_for :passengers do |passenger| %>
+			<%= passenger.label :name, "Name" %>
+			<%= passenger.text_field :name %>
+			<%= passenger.label :email, "Email address" %>
+			<%= passenger.text_field :email %>
+			<br>
+		<% end %>
+		
+	<%= f.submit "Book flight" %>
+<% end %>
+		

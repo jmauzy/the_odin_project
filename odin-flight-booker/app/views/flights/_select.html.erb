@@ -1,0 +1,27 @@
+<%=form_tag new_booking_path, method: :get do %>
+<%=hidden_field_tag :num_passengers, params[:num_passengers] %>
+<h2>Select a flight for <%= pluralize(params[:num_passengers], "passenger") %></h2>
+
+<table>
+	<tr>
+		<th width=55>Select</th>
+		<th width=40>Flight</th>
+		<th width=40>From</th>
+		<th width=40>To</th>
+		<th width=100>Date</th>
+		<th width=70>Time</th>
+	</tr>
+		
+<% @flights.each do |flight| %>
+	<tr>
+		<td align="center"><%= radio_button_tag :flight_id, flight.id %></td>
+		<td><%= flight.id %></td>
+		<td><%= flight.origin.code %></td>
+		<td><%= flight.destination.code %></td>
+		<td><%= flight.datetime.strftime("%B %d, %Y") %></td>
+		<td><%= flight.datetime.strftime("%I:%M %p") %></td>
+	</tr>
+<% end %>
+</table>
+<%= button_tag "submit" %>
+<% end %>

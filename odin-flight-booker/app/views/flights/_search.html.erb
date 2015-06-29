@@ -1,0 +1,14 @@
+<%= form_tag '/', method: :get do %>
+	<%= hidden_field_tag :search %>
+
+	<%= label :origin, "Select origin airport" %>
+	<%= select_tag :origin, options_for_select(@airports) %>
+	
+	<%= label :destination, "Select destination airport" %>
+	<%= select_tag :destination, options_for_select(@airports) %>
+	<br>
+	<%= label :num_passengers, "How many passengers?" %>
+	<%= select_tag :num_passengers, options_for_select(1..4) %>
+	<br>
+	<%= button_tag "search" %>
+<% end %>

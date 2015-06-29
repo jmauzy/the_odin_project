@@ -1,0 +1,7 @@
+<h1><%= link_to "Flight Booker", root_path %></h1>
+
+ <%= render 'search' %>
+ 
+ <% if !@flights.empty? %>
+ 	<%= render 'select' %>
+ <% end %>

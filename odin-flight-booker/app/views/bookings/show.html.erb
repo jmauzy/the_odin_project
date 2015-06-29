@@ -1,0 +1,12 @@
+<h1>Your booking is confirmed!</h1>
+
+<p>Flight <%= @booking.flight.id %> from <%= @booking.flight.origin.code %> 
+										to <%= @booking.flight.destination.code %> </p>
+<p>Departs: <%= @booking.flight.datetime %>
+
+<p>Passengers:</p>
+<% @booking.passengers.each do |passenger| %>
+<p><%= passenger.name %> - email: <%= passenger.email %></p>
+<% end %>
+
+<p>Thanks for using Odin Flight Booker!</p>
